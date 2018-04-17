@@ -109,7 +109,7 @@ euro
 ;;Constract: exch-usd ; number, number->usd
 ;;Purpose: Exchange money to USD with exchanging rate.
 
-;;;;;여기는 제거한다.
+;;;;;TODO: Delete.
 ;;Example: Input     -> Output
 ;;         1000, krw -> 1
 ;;         0.8,  eur -> 1
@@ -124,7 +124,7 @@ euro
 ;;Constract: charge-calc ; number, number->number
 ;;Purpose: Calculate money excluding commissions.
 
-;;;;;여기는 제거한다.
+;;;;;TODO: Delete.
 ;;Example: Input     -> Output
 ;;         0.1,  100 -> 90
 ;;         0.03, 100 -> 97
@@ -137,7 +137,7 @@ euro
 ;;Constract: krw->usd ; number->number
 ;;Purpose: Exchange KRW to USD and make a commission based on the amount.
 
-;;;;;여기는 제거한다.
+;;;;;TODO: Delete.
 ;;Example: Input     -> Output
 ;;         -10       -> Error
 ;;         0         -> 0
