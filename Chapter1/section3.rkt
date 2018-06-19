@@ -21,8 +21,9 @@
 (g 2 2)
 
 ;-------------------------Code 3.3-------------------------
-(define (rect-size width height) (* width height))
-(define (rect-length width height)
+(define (rect-size    width height)
+  (* width height))
+(define (rect-length  width height)
   (+ (* 2 width)
      (* 2 height)))
 
@@ -60,11 +61,11 @@ euro
 (define (krw->usd won)
   (cond
     [(or (>= 100000    won)
-         (<  100000000 won)) (/ (- won (* 0.03 won)) krw)]
-    [(>= 1000000 won) (/ (- won (* 0.04 won)) krw)]
-    [(>= 10000000 won) (/ (- won (* 0.05 won)) krw)]
-    [(>= 50000000 won) (/ (- won (* 0.04 won)) krw)]
-    [(>= 100000000 won) (/ (- won (* 0.035 won)) krw)]))
+         (<  100000000 won)) (/ (- won (* 0.03  won)) krw)]
+    [(>=        1000000 won) (/ (- won (* 0.04  won)) krw)]
+    [(>=       10000000 won) (/ (- won (* 0.05  won)) krw)]
+    [(>=       50000000 won) (/ (- won (* 0.04  won)) krw)]
+    [(>=      100000000 won) (/ (- won (* 0.035 won)) krw)]))
 
 (krw->usd 20000000)
 
@@ -95,10 +96,10 @@ euro
     [(>  0           won)      'Error-*less-than-0*]
     [(or (>= exch-level1 won)
          (<  exch-level5 won)) (exch-usd (charge-calc charge-level1 won) krw)]
-    [(>= exch-level2 won)      (exch-usd (charge-calc charge-level3 won) krw)]
-    [(>= exch-level3 won)      (exch-usd (charge-calc charge-level4 won) krw)]
-    [(>= exch-level4 won)      (exch-usd (charge-calc charge-level3 won) krw)]
-    [(>= exch-level5 won)      (exch-usd (charge-calc charge-level2 won) krw)]))
+    [(>= exch-level2      won) (exch-usd (charge-calc charge-level3 won) krw)]
+    [(>= exch-level3      won) (exch-usd (charge-calc charge-level4 won) krw)]
+    [(>= exch-level4      won) (exch-usd (charge-calc charge-level3 won) krw)]
+    [(>= exch-level5      won) (exch-usd (charge-calc charge-level2 won) krw)]))
 
 ;----------Test
 (krw->usd2 20000000)
@@ -110,10 +111,10 @@ euro
 ;;Purpose: Exchange money to USD with exchanging rate.
 
 ;;;;;TODO: Delete.
-;;Example: Input     -> Output
-;;         1000, krw -> 1
-;;         0.8,  eur -> 1
-;;         6,    cny -> 1
+;;Example: Input       -> Output
+;;         1000, krw   -> 1
+;;         0.8,  eur   -> 1
+;;         6,    cny   -> 1
 ;;;;;;;;;;;;;;;;;;;;;;
 
 (exch-usd 1000 krw) ;1
@@ -149,21 +150,21 @@ euro
 ;;         200000000 -> 194000
 ;;;;;;;;;;;;;;;;;;;;;;
 
-(krw->usd2 -1000)     ;Error
-(krw->usd2 0)         ;0
-(krw->usd2 100000)    ;97
-(krw->usd2 1000000)   ;960
-(krw->usd2 10000000)  ;9500
-(krw->usd2 50000000)  ;48000
+(krw->usd2 -1000    ) ;Error
+(krw->usd2 0        ) ;0
+(krw->usd2 100000   ) ;97
+(krw->usd2 1000000  ) ;960
+(krw->usd2 10000000 ) ;9500
+(krw->usd2 50000000 ) ;48000
 (krw->usd2 100000000) ;96500
 (krw->usd2 200000000) ;194000
 
 ;-----Compare with krw->usd
-(krw->usd  -1000)     ;Error -> -0.97 Problem!!!
-(krw->usd  0)         ;0
-(krw->usd  100000)    ;97
-(krw->usd  1000000)   ;960
-(krw->usd  10000000)  ;9500
-(krw->usd  50000000)  ;48000
+(krw->usd  -1000    ) ;Error -> -0.97 Problem!!!
+(krw->usd  0        ) ;0
+(krw->usd  100000   ) ;97
+(krw->usd  1000000  ) ;960
+(krw->usd  10000000 ) ;9500
+(krw->usd  50000000 ) ;48000
 (krw->usd  100000000) ;96500
 (krw->usd  200000000) ;194000
