@@ -24,8 +24,8 @@
 (define (rect-size    width height)
   (* width height))
 (define (rect-length  width height)
-  (+ (* 2 width)
-     (* 2 height)))
+  (+ (* 2 width  )
+     (* 2 height )))
 
 ;-------------------------Code 3.4-------------------------
 (define (rect-length-upgrade width height)
