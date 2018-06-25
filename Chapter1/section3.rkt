@@ -40,7 +40,7 @@ dollar
 euro
 
 ;-------------------------Code 3.6-------------------------
-(define usd 1)
+(define usd 1           )
 (define eur (* 0.8  usd))
 (define krw (* 1000 usd))
 
